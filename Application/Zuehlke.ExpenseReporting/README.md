@@ -19,6 +19,7 @@ You've created a new ASP.NET Core project. [Learn what's new](https://go.microso
 *   [Add packages using NuGet.](https://go.microsoft.com/fwlink/?LinkId=699317)
 *   [Add client packages using Bower.](https://go.microsoft.com/fwlink/?LinkId=699318)
 *   [Target development, staging or production environment.](https://go.microsoft.com/fwlink/?LinkId=699319)
+*   [Add a new third party library](http://blog.stevensanderson.com/2016/10/04/angular2-template-for-visual-studio/)
 
 ## Overview
 
