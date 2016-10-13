@@ -1,0 +1,6 @@
+Copyright (c) 2016 Zühlke Engineering GmbH  
+All rights reserved.
+
+You may use materials provided here for personal education. Using for commercial purposes or reproduction in any kind requires written consent from the copyright holders.
+
+Parts of the repository (especially those parts containing example source code) are licensed under the MIT License. You will find a separate license file where this is the case.

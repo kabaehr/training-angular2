@@ -1,0 +1,7 @@
+# node
+node_modules
+
+#Visual Studio Output folders
+bin
+obj
+wwwroot/dist
