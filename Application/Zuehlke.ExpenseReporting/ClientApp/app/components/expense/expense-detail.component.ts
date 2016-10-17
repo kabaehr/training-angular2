@@ -3,19 +3,19 @@ import { Router, ActivatedRoute } from '@angular/router';
 
 import { Subscription }       from 'rxjs/Subscription';
 
-import { Receipt } from './receipt';
-import { ReceiptService } from './receipt.service';
+import { Expense } from './expense';
+import { ExpenseService } from './expense.service';
 
 @Component({
-    template: require('./receipt-detail.component.html')
+    template: require('./expense-detail.component.html')
 })
-export class ReceiptDetailComponent implements OnInit, OnDestroy {
+export class ExpenseDetailComponent implements OnInit, OnDestroy {
 
-    receipt: Receipt;
+    expense: Expense;
     errorMessage: string;
     private sub: Subscription;
 
-    constructor(private route: ActivatedRoute, private router: Router, private receiptService: ReceiptService) {}
+    constructor(private route: ActivatedRoute, private router: Router, private expenseService: ExpenseService) {}
 
     ngOnInit(): void {
         this.sub = this.route.params.subscribe(
@@ -30,8 +30,8 @@ export class ReceiptDetailComponent implements OnInit, OnDestroy {
     }
 
     getTravelTime(id: string): void {
-        this.receiptService.getReceipt(id)
-            .subscribe(receipt => this.receipt = receipt, error => this.errorMessage = <any>error);
+        this.expenseService.getExpense(id)
+            .subscribe(expense => this.expense = expense, error => this.errorMessage = <any>error);
     }
 
     goBack(): void {

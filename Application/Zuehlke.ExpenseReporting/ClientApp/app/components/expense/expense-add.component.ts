@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-    template: require('./receipt-add.component.html')
+    template: require('./expense-add.component.html')
 })
-export class ReceiptAddComponent {
+export class ExpenseAddComponent {
 
     constructor(private router: Router) {}
 

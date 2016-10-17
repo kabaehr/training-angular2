@@ -4,7 +4,7 @@ import { UniversalModule } from 'angular2-universal';
 import { AppComponent } from './components/app/app.component'
 
 import { WelcomeComponent } from './components/welcome/welcome.component';
-import { ReceiptModule } from './components/receipt/receipt.module';
+import { ExpenseModule } from './components/expense/expense.module';
 
 @NgModule({
     bootstrap: [ AppComponent ],
@@ -14,7 +14,7 @@ import { ReceiptModule } from './components/receipt/receipt.module';
     ],
     imports: [
         UniversalModule, // Must be first import. This automatically imports BrowserModule, HttpModule, and JsonpModule too.
-        ReceiptModule, 
+        ExpenseModule, 
         RouterModule.forRoot([
             { path: '', redirectTo: 'welcome', pathMatch: 'full' },
             { path: 'welcome', component: WelcomeComponent },
