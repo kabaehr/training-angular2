@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-
-import { SharedModule } from '../shared/shared.module';
+import { CommonModule } from '@angular/common';
 
 import { productRouting } from './expense.routing';
 import { ExpenseOverviewComponent } from './expense-overview.component';
@@ -13,8 +12,8 @@ import { ExpenseFormComponent } from './expense-form.component';
 
 @NgModule({
   imports: [
-    FormsModule,
-    SharedModule,
+      FormsModule,
+      CommonModule,
     productRouting
   ],
   declarations: [
