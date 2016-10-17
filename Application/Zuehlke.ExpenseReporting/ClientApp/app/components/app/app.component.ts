@@ -2,8 +2,9 @@ import { Component } from '@angular/core';
 
 @Component({
     selector: 'app',
-    template: require('./app.component.html'),
-    styles: [require('./app.component.css')]
+    template: require('./app.component.html')
 })
+
 export class AppComponent {
+    pageTitle: string = 'Receipt Management Tool';
 }

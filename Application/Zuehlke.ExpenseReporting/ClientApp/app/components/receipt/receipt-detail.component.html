@@ -1,0 +1,12 @@
+<div class="panel panel-primary" *ngIf="receipt">
+    <div class="panel-heading" style="font-size: large">Receipt from {{receipt.name}}</div>
+    <div class="panel-body">
+        <receipt-form [receipt]="receipt"></receipt-form>
+    </div>
+
+    <div class="panel-footer">
+        <a class="btn btn-default" (click)="goBack()">
+            <i class="glyphicon glyphicon-chevron-left"></i> Back to Overview
+        </a>
+    </div>
+</div>
