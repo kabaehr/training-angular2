@@ -26,13 +26,12 @@ export class ExpenseService {
             .map((expenses: Expense[]) => expenses.find(p => p.id === id));
     }
 
-    createExpense(expense: Expense): Observable<Expense> {
+    createExpense(expense: Expense): Observable<Response> {
+        expense.id = this.generateGuid();
         let dtoExpense = JSON.parse(JSON.stringify(expense));
         dtoExpense.date = this.convertDateToString(expense.date);
 
-        return this.http.post(this.expenseUrl, JSON.stringify(dtoExpense), { headers: this.headers })
-            .map((response: Response) => response.json())
-            .catch(this.handleError);
+        return this.http.post(this.expenseUrl, JSON.stringify(dtoExpense), { headers: this.headers });
     }
 
     updateExpense(expense: Expense): Observable<Response> {
@@ -74,4 +73,16 @@ export class ExpenseService {
         console.error(error);
         return Observable.throw(error);
     }
+
+    private generateGuid() : string {
+        return this.s4() + this.s4() + '-' + this.s4() + '-' + this.s4() + '-' +
+            this.s4() + '-' + this.s4() + this.s4() + this.s4();
+    }
+
+    private s4(): string {
+        return Math.floor((1 + Math.random()) * 0x10000)
+            .toString(16)
+            .substring(1);
+    }
+
 }
