@@ -1,4 +1,6 @@
 using System;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 
 namespace Zuehlke.ExpenseReporting.Data
 {
@@ -25,6 +27,7 @@ namespace Zuehlke.ExpenseReporting.Data
         /// <summary>
         /// Gets or sets the reason for the expense.
         /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
         public ExpenseReason Reason { get; set; }
 
         /// <summary>
