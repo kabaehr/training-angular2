@@ -91,7 +91,7 @@ namespace Zuehlke.ExpenseReporting.Controllers
         /// HTTP 400 if no record was present in the body of the request
         /// or HTTP 404 if the record to be updated was not found in the database.
         /// </returns>
-        [HttpPut]
+        [HttpPut("{id}")]
         public IActionResult Put([FromBody]ExpenseRecord record)
         {
             try
@@ -114,9 +114,15 @@ namespace Zuehlke.ExpenseReporting.Controllers
         /// </summary>
         /// <param name="id">Unique id of the record to be deleted</param>
         /// <returns>HTTP 202 to indicate that the provided record is no longer available in the database.</returns>
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public IActionResult Delete(Guid id)
         {
+            var expenseRecord = this.repository.FindById(id);
+            if (expenseRecord == null)
+            {
+                return NotFound();
+            }
+            
             this.repository.Delete(id);
             return this.NoContent();
         }
