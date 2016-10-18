@@ -1,6 +1,13 @@
 {
-  "name": "Angular2Spa",
-  "version": "0.0.0",
+  "name": "Angular2Workshop",
+  "version": "0.1.0",
+  "description": "A simple application with an Angular 2 app and a Asp.Net Core Backend",
+  "author": "Markus Rehrs <markus.rehrs@zuehlkecom>, Stefan Benz <stefan.benz@zuehlke.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Zuehlke/training-angular2.git"
+  },
+  "license": "UNLICENSED",
   "dependencies": {
     "@angular/common": "^2.0.0",
     "@angular/compiler": "^2.0.0",
