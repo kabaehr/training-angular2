@@ -1,5 +1,5 @@
 import {  PipeTransform, Pipe } from '@angular/core';
-import { Expense } from './expense';
+import { Expense } from '../model/expense';
 
 @Pipe({
     name: 'expenseFilter'

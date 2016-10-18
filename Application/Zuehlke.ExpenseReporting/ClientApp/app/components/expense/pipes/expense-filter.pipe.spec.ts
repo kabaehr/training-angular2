@@ -1,7 +1,7 @@
-﻿/// <reference path="../../../../typings/globals/jasmine/index.d.ts" />
+﻿/// <reference path="../../../../../typings/globals/jasmine/index.d.ts" />
 
 import { ExpenseFilterPipe } from './expense-filter.pipe';
-import { Expense, Reason } from './expense';
+import { Expense, Reason } from '../model/expense';
 
 describe('ExpenseFilterPipe', () => {
    let pipe = new ExpenseFilterPipe();

@@ -3,8 +3,8 @@ import { Router } from '@angular/router';
 
 import { Observable } from 'rxjs/Observable';
 
-import { Expense } from './expense';
-import { ExpenseService } from './expense.service';
+import { Expense } from '../model/expense';
+import { ExpenseService } from '../services/expense.service';
 
 @Component({
     selector: 'expense-form',

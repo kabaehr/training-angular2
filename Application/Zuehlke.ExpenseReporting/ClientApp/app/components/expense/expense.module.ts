@@ -3,12 +3,12 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
 import { productRouting } from './expense.routing';
-import { ExpenseOverviewComponent } from './expense-overview.component';
-import { ExpenseDetailComponent } from './expense-detail.component';
-import { ExpenseAddComponent } from './expense-add.component';
-import { ExpenseFilterPipe } from './expense-filter.pipe';
-import { ExpenseService } from './expense.service';
-import { ExpenseFormComponent } from './expense-form.component';
+import { ExpenseOverviewComponent } from './overview/expense-overview.component';
+import { ExpenseDetailComponent } from './detail/expense-detail.component';
+import { ExpenseAddComponent } from './add/expense-add.component';
+import { ExpenseFilterPipe } from './pipes/expense-filter.pipe';
+import { ExpenseService } from './services/expense.service';
+import { ExpenseFormComponent } from './form/expense-form.component';
 
 @NgModule({
   imports: [

@@ -1,9 +1,9 @@
 import { ModuleWithProviders }  from '@angular/core';
 import { Routes, RouterModule} from '@angular/router';
 
-import { ExpenseOverviewComponent } from './expense-overview.component';
-import { ExpenseDetailComponent } from './expense-detail.component';
-import { ExpenseAddComponent } from './expense-add.component';
+import { ExpenseOverviewComponent } from './overview/expense-overview.component';
+import { ExpenseDetailComponent } from './detail/expense-detail.component';
+import { ExpenseAddComponent } from './add/expense-add.component';
 
 export const productRoutes: Routes = [
   { path: 'overview', component: ExpenseOverviewComponent },

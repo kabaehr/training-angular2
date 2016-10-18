@@ -6,7 +6,7 @@ import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/observable/throw';
 
-import { Expense } from './expense';
+import { Expense } from '../model/expense';
 
 @Injectable()
 export class ExpenseService {

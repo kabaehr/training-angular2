@@ -3,8 +3,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 
 import { Subscription }       from 'rxjs/Subscription';
 
-import { Expense } from './expense';
-import { ExpenseService } from './expense.service';
+import { Expense } from '../model/expense';
+import { ExpenseService } from '../services/expense.service';
 
 @Component({
     template: require('./expense-detail.component.html')
