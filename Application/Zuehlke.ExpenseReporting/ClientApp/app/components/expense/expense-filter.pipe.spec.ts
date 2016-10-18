@@ -3,10 +3,10 @@
 import { ExpenseFilterPipe } from './expense-filter.pipe';
 import { Expense, Reason } from './expense';
 
-describe('TitleCasePipe', () => {
+describe('ExpenseFilterPipe', () => {
    let pipe = new ExpenseFilterPipe();
 
-   it('transforms "abc" to "Abc"', () => {
+   it('should filter out expenses that do not include <<Ana>>', () => {
         let expense1 = new Expense('1', 'Anakin Skywalker', Reason.Hotel, "12-01-2016", 12.20, "Night on Coruscant with Obi Wan");
         let expense2 = new Expense('1', 'Obi Wan', Reason.Hotel, "12-01-2016", 12.20, "Night on Coruscant with Anakin");
         let expenses = [expense1, expense2];
