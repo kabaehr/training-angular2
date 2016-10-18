@@ -3,9 +3,8 @@
 import { AppComponent} from './app.component';
 
 describe('App', () => {
-  // provide our implementations or mocks to the dependency injector
 
-    it('test drive through', () => {
+    it('should have a proper test setup', () => {
         expect(true).toBe(true);
     });
 
