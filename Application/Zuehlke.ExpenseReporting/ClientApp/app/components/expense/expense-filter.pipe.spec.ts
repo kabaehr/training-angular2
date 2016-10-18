@@ -11,6 +11,6 @@ describe('ExpenseFilterPipe', () => {
         let expense2 = new Expense('1', 'Obi Wan', Reason.Hotel, "12-01-2016", 12.20, "Night on Coruscant with Anakin");
         let expenses = [expense1, expense2];
 
-        expect(pipe.transform(expenses, "Ana")).toEqual([expense1]);
+        expect(pipe.transform(expenses, "Ana")[0]).toEqual(expense1);
    });
 });
