@@ -1,14 +1,11 @@
-<div>
-    <nav class='navbar navbar-default'>
-        <div class='container-fluid'>
-            <a class='navbar-brand'>{{pageTitle}}</a>
-            <ul class='nav navbar-nav'>
-                <li><a [routerLink]="['/welcome']">Home</a></li>
-                <li><a [routerLink]="['/overview']">Overview</a></li>
-            </ul>
+<div class='container-fluid'>
+    <div class='row'>
+        <div class='col-sm-3'>
+            <nav-menu></nav-menu>
         </div>
-    </nav>
-    <div class='container'>
-        <router-outlet></router-outlet>
+        <div class='col-sm-9 body-content'>
+            <br/>
+            <router-outlet></router-outlet>
+        </div>
     </div>
 </div>
