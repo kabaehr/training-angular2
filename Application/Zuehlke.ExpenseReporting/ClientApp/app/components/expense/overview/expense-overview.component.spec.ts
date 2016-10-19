@@ -48,6 +48,8 @@ describe('ExpenseOverviewComponent', () => {
         fixture.whenStable().then(() => { // wait for async getExpenses
             fixture.detectChanges();        // update view with expsenses
 
+            expect(expenseService.getExpenses).toHaveBeenCalledTimes(1); //check that getExpenses() from the expense service was called
+           
             const tableBody = fixture.debugElement.query(By.css('tbody')); //check for table to contain the two expenses
             expect(tableBody.nativeElement.children.length).toEqual(2);
             expect(tableBody.nativeElement.children[0].children[0].textContent).toContain('Anakin Skywalker');
@@ -65,6 +67,9 @@ describe('ExpenseOverviewComponent', () => {
 
         tick(); //simulates the passage of time until all pending asynchronous activities complete
         fixture.detectChanges(); //update view
+
+        expect(expenseService.deleteExpense).toHaveBeenCalledTimes(1); //check that deleteExpense from the expense service was called
+        expect(expenseService.deleteExpense).toHaveBeenCalledWith(expense1); //check that deleteExpense from the expense service was called with Anakin's expense
 
         const tableBody = fixture.debugElement.query(By.css('tbody')); //check for table to not contain Anakin Skywalker anymore
         expect(tableBody.nativeElement.children.length).toEqual(1);
