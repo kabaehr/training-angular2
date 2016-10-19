@@ -20,8 +20,8 @@ export class ExpenseDetailComponent implements OnInit, OnDestroy {
     ngOnInit(): void {
         this.sub = this.route.params.subscribe(
             params => {
-                let id = params['id'];
-                this.getTravelTime(id);
+                const id = params['id'];
+                this.getExpense(id);
             });
     }
 
@@ -29,13 +29,13 @@ export class ExpenseDetailComponent implements OnInit, OnDestroy {
         this.sub.unsubscribe();
     }
 
-    getTravelTime(id: string): void {
-        this.expenseService.getExpense(id)
-            .subscribe(expense => this.expense = expense, error => this.errorMessage = <any>error);
-    }
-
     goBack(): void {
         this.router.navigate(['/overview']);
+    }
+
+    private getExpense(id: string): void {
+        this.expenseService.getExpense(id)
+            .subscribe(expense => this.expense = expense, error => this.errorMessage = <any>error);
     }
 
 }
