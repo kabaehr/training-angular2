@@ -1,10 +1,8 @@
-﻿/// <reference path="../../../../../typings/globals/jasmine/index.d.ts" />
-
-import { ExpenseFilterPipe } from './expense-filter.pipe';
+﻿import { ExpenseFilterPipe } from './expense-filter.pipe';
 import { Expense, Reason } from '../model/expense';
 
 describe('ExpenseFilterPipe', () => {
-   let pipe = new ExpenseFilterPipe();
+   const pipe = new ExpenseFilterPipe();
 
    it('should filter out expenses that do not include <<Ana>>', () => {
         let expense1 = new Expense('1', 'Anakin Skywalker', Reason.Hotel, "12-01-2016", 12.20, "Night on Coruscant with Obi Wan");
