@@ -19,7 +19,6 @@ describe('ExpenseFormComponent', () => {
     const newExpense = new Expense(null, 'Palpatine', Reason.Hotel, '12.01.1999', 54.00, 'Reasoning about the dark side of the force');
 
     let expenseService: ExpenseService;
-    let expenseServiceSpy: jasmine.Spy;
 
     beforeEach(() => {
         TestBed.configureTestingModule({
@@ -34,8 +33,8 @@ describe('ExpenseFormComponent', () => {
 
         // Expense service actually injected into the component
         expenseService = fixture.debugElement.injector.get(ExpenseService);
-        expenseServiceSpy = spyOn(expenseService, 'updateExpense').and.returnValue(new BehaviorSubject({}).asObservable());
-        expenseServiceSpy = spyOn(expenseService, 'createExpense').and.returnValue(new BehaviorSubject({}).asObservable());
+        spyOn(expenseService, 'updateExpense').and.returnValue(new BehaviorSubject({}).asObservable());
+        spyOn(expenseService, 'createExpense').and.returnValue(new BehaviorSubject({}).asObservable());
     });
 
     it('should update an expense if it is not a new one', async(inject([Router], (router: Router) => {
