@@ -74,7 +74,6 @@ describe('ExpenseOverviewComponent', () => {
         const tableBody = fixture.debugElement.query(By.css('tbody')); //check for table to not contain Anakin Skywalker anymore
         expect(tableBody.nativeElement.children.length).toEqual(1);
         expect(tableBody.nativeElement.children[0].children[0].textContent).toContain('Yoda');
-
     }));
 });
 
