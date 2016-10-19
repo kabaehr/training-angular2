@@ -1,4 +1,4 @@
-﻿import { ComponentFixture, TestBed, async } from '@angular/core/testing';
+﻿import { ComponentFixture, TestBed, async, fakeAsync, tick } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { FormsModule } from "@angular/forms";
 import { HttpModule } from "@angular/http";
@@ -43,7 +43,7 @@ describe('ExpenseOverviewComponent', () => {
         expect(expenseServiceSpy.calls.any()).toBe(false, 'getExpenses not yet called');
     });
 
-    it('should show two expenses after OnOnit', async(() => {
+    it('should show two expenses after OnOnit', async(() => { //use async to handle getExpenses request
         fixture.detectChanges();
         fixture.whenStable().then(() => { // wait for async getExpenses
             fixture.detectChanges();        // update view with expsenses
@@ -55,20 +55,21 @@ describe('ExpenseOverviewComponent', () => {
         });
     }));
 
-    it('should remove one entry when it is deleted', async(() => {
+    it('should remove one entry when it is deleted', fakeAsync(() => { //use fakeAsync to handle async request with a tick()
         fixture.detectChanges();
-        fixture.whenStable().then(() => { // wait for async getExpenses
-            fixture.detectChanges();        // update view with expsenses
+        tick(); //simulates the passage of time until all pending asynchronous activities (i.e. getExpenses) complete
+        fixture.detectChanges(); // update view with expsenses
 
-            const firstExpenseDeleteIcon = fixture.debugElement.query(By.css('tbody > tr  span')); //query delete icon
-            firstExpenseDeleteIcon.triggerEventHandler('click', new Event('dummyEvent')); //trigger a delete
+        const firstExpenseDeleteIcon = fixture.debugElement.query(By.css('tbody > tr  span')); //query delete icon
+        firstExpenseDeleteIcon.triggerEventHandler('click', new Event('dummyEvent')); //trigger a delete
 
-            fixture.detectChanges(); //update view
+        tick(); //simulates the passage of time until all pending asynchronous activities complete
+        fixture.detectChanges(); //update view
 
-            const tableBody = fixture.debugElement.query(By.css('tbody')); //check for table to not contain Anakin Skywalker anymore
-            expect(tableBody.nativeElement.children.length).toEqual(1);
-            expect(tableBody.nativeElement.children[0].children[0].textContent).toContain('Yoda');
-        });
+        const tableBody = fixture.debugElement.query(By.css('tbody')); //check for table to not contain Anakin Skywalker anymore
+        expect(tableBody.nativeElement.children.length).toEqual(1);
+        expect(tableBody.nativeElement.children[0].children[0].textContent).toContain('Yoda');
+
     }));
 });
 
