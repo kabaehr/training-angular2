@@ -3,9 +3,7 @@
 import { AppComponent} from './app.component';
 
 describe('App', () => {
-
     it('should have a proper test setup', () => {
         expect(true).toBe(true);
     });
-
 });
