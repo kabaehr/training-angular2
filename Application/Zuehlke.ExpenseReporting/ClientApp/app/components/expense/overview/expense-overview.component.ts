@@ -31,5 +31,4 @@ export class ExpenseOverviewComponent implements OnInit {
                 return Observable.throw(error);
             });
     }
-
 }
