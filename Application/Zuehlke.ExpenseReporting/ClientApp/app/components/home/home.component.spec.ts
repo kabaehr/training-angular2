@@ -19,12 +19,10 @@ describe('HomeComponent', () => {
         });
 
         fixture = TestBed.createComponent(HomeComponent);
-
         homeComponent = fixture.componentInstance; // HomeComponent test instance
 
         // query for the title <panel-heading> by CSS class selector
-        debugElement = fixture.debugElement.query(By.css('.panel-heading'));
-        htmlElement = debugElement.nativeElement;
+        htmlElement = fixture.debugElement.query(By.css('.panel-heading')).nativeElement;
     });
 
     it('should display original title', () => {
