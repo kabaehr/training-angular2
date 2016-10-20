@@ -2,11 +2,15 @@
 This is a simple example application demonstration how ASP.NET Core, Angular 2, TypeScript and WebPack (to name just these four) work together.
 
 ### Before the first launch ###
-Before launching the application for the first time after cloning the repository make sure to rebuild the vendor scripts.
+Before launching the application for the first time after cloning the repository make sure to rebuild the vendor scripts and install the typings.
 
 If you have not installed WebPack yet make sure to install it by opening a command prompt and running
 
 	npm install -g webpack
+	
+If you have not installed typings yet make sure to install it by opening a command prompt and running
+
+	npm install -g typings
 
 After you have done this run
 
