@@ -13,7 +13,6 @@ require('phantomjs-polyfill');
 require('es6-promise');
 require('es6-shim');
 require('es7-reflect-metadata/dist/browser');
-
 require('zone.js/dist/zone');
 require('zone.js/dist/long-stack-trace-zone.js');
 require('zone.js/dist/proxy');
@@ -37,10 +36,4 @@ var appContext = require.context('./ClientApp/app', true, /\.spec\.ts/);
 // that will require the file and load it up here. Context will
 // loop and require those spec files here
 appContext.keys().forEach(appContext);
-
-// Select BrowserDomAdapter.
-// see https://github.com/AngularClass/angular2-webpack-starter/issues/124
-//var domAdapter = require('angular2/src/platform/browser/browser_adapter');
-//var domAdapter = require('@angular/platform-browser/src/browser/browser_adapter');
-//domAdapter.BrowserDomAdapter.makeCurrent();
 
