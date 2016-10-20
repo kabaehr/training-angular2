@@ -10,7 +10,7 @@
   "license": "UNLICENSED",
   "scripts": {
     "test": "./node_modules/.bin/karma start",
-    "postinstall": "typings install"
+    "postinstall": "typings install && npm uninstall selenium-webdriver"
   },
   "dependencies": {
     "@angular/common": "^2.0.0",
