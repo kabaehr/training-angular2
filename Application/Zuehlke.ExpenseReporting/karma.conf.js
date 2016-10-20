@@ -29,7 +29,7 @@ module.exports = function(config) {
       reporters: [
         { type: 'text-summary' },
         { type: 'html' }
-      ],
+      ]
     },
 
     // Webpack please don't spam the console when running in karma!

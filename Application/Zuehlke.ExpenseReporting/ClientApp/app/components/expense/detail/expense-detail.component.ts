@@ -34,7 +34,7 @@ export class ExpenseDetailComponent implements OnInit, OnDestroy {
 
     private getExpense(id: string): void {
         this.expenseService.getExpense(id)
-            .subscribe(expense => this.expense = expense, error => this.errorMessage = <any>error);
+            .subscribe(expense => this.expense = expense, error => this.errorMessage = error);
     }
 
 }
