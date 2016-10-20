@@ -5,6 +5,4 @@ import { Component } from '@angular/core';
     template: require('./app.component.html'),
     styles: [require('./app.component.css')]
 })
-export class AppComponent {
-}
-
+export class AppComponent {}

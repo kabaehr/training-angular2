@@ -10,6 +10,7 @@ import { Expense } from '../model/expense';
 
 @Injectable()
 export class ExpenseService {
+
     private expenseUrl = 'api/expenses';
     private headers = new Headers({ 'Content-Type': 'application/json' });
 
@@ -28,7 +29,7 @@ export class ExpenseService {
 
     createExpense(expense: Expense): Observable<Response> {
         expense.id = this.generateGuid();
-        let dtoExpense = JSON.parse(JSON.stringify(expense));
+        const dtoExpense = JSON.parse(JSON.stringify(expense));
         dtoExpense.date = this.convertDateToString(expense.date);
 
         return this.http.post(this.expenseUrl, JSON.stringify(dtoExpense), { headers: this.headers });
@@ -37,24 +38,25 @@ export class ExpenseService {
     updateExpense(expense: Expense): Observable<Response> {
         const url = `${this.expenseUrl}/${expense.id}`;
   
-        let dtoExpense = JSON.parse(JSON.stringify(expense));
+        const dtoExpense = JSON.parse(JSON.stringify(expense));
         dtoExpense.date = this.convertDateToString(expense.date);
 
         return this.http.put(url, JSON.stringify(dtoExpense), { headers: this.headers });
     }
 
     deleteExpense(expense: Expense): Observable<Response> {
-        const url = `${this.expenseUrl}/${expense.id}`
+        const url = `${this.expenseUrl}/${expense.id}`;
+
         return this.http.delete(url, { headers: this.headers, body: "" });
     }
 
-    private mapExpenses(response: Response) {
-        let mappedExpenses = response.json() || [];
-        let tzoffset = (new Date()).getTimezoneOffset() * 60000; //offset in milliseconds
+    private mapExpenses(response: Response) : any {
+        const mappedExpenses = response.json() || [];
+        const tzoffset = (new Date()).getTimezoneOffset() * 60000; //offset in milliseconds
         mappedExpenses.forEach((expense: any) => {
-            let dateArray = expense.date.split(".");
-            let theDate = new Date(dateArray[2], dateArray[1] - 1, dateArray[0]);
-            let finalDate = new Date(theDate.getTime() - tzoffset);
+            const dateArray = expense.date.split(".");
+            const theDate = new Date(dateArray[2], dateArray[1] - 1, dateArray[0]);
+            const finalDate = new Date(theDate.getTime() - tzoffset);
             expense.date = finalDate.toISOString().slice(0, 10);
         });
 
@@ -62,14 +64,14 @@ export class ExpenseService {
     }
 
     private convertDateToString(date: string) : string {
-        let day = date.substring(8, 10);
-        let month = date.substring(5, 7);
-        let year = date.substring(0, 4);
+        const day = date.substring(8, 10);
+        const month = date.substring(5, 7);
+        const year = date.substring(0, 4);
 
         return day + '.' + month + '.' + year;
     }
 
-    private handleError(error: Response) {
+    private handleError(error: Response) : Observable<any> {
         console.error(error);
         return Observable.throw(error);
     }

@@ -1,11 +1,9 @@
 ﻿import { ComponentFixture, TestBed, async, inject } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { ActivatedRoute, Router } from '@angular/router';
-import { FormsModule } from "@angular/forms";
-import { HttpModule } from "@angular/http";
-
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 import { By } from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 
 import { ActivatedRouteStub, RouterStub } from '../../../../utils/testutils';
@@ -16,6 +14,7 @@ import { ExpenseService } from '../services/expense.service';
 import { Expense, Reason } from '../model/expense';
 
 describe('ExpenseDetailComponent', () => {
+
     let expenseDetailComponent: ExpenseDetailComponent;
     let fixture: ComponentFixture<ExpenseDetailComponent>;
 

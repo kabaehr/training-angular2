@@ -9,7 +9,6 @@ export const productRoutes: Routes = [
   { path: 'overview', component: ExpenseOverviewComponent },
   { path: 'expense/add', component: ExpenseAddComponent },
   { path: 'expense/:id', component: ExpenseDetailComponent }
-  
 ];
 
 export const productRouting: ModuleWithProviders = RouterModule.forChild(productRoutes);

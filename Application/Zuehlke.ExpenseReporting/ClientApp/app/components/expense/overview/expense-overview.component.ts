@@ -10,25 +10,25 @@ import { ExpenseService } from '../services/expense.service';
 })
 export class ExpenseOverviewComponent implements OnInit {
 
+    expenses: Expense[];
     expenseFilter: string = '';
     errorMessage: string;
-    expenses: Expense[];
 
     constructor(private expenseService: ExpenseService) { }
 
     ngOnInit(): void {
         this.expenseService.getExpenses()
-            .subscribe(expenses => this.expenses = expenses, error => this.errorMessage = <any>error);
+            .subscribe(expenses => this.expenses = expenses, error => this.errorMessage = error);
     }
 
-    deleteExpense(expense: Expense) {
+    deleteExpense(expense: Expense) : void {
         this.expenseService.deleteExpense(expense)
-            .subscribe(response => {
-                this.expenses = this.expenses.filter(rec => rec.id !== expense.id);
-            },
-            error => {
-                console.error("Error deleting expense with id: " + expense.id);
-                return Observable.throw(error);
-            });
+            .subscribe(() => { this.expenses = this.expenses.filter(exp => exp.id !== expense.id) },
+            error =>  { this.handleError(error, expense) });
+    }
+
+    private handleError(error, expense: Expense) : Observable<any> {
+        console.error('Error deleting expense with id: ' + expense.id);
+        return Observable.throw(error);
     }
 }

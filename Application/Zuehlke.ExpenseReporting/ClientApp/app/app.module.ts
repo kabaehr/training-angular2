@@ -8,11 +8,7 @@ import { ExpenseModule } from './components/expense/expense.module';
 
 @NgModule({
     bootstrap: [ AppComponent ],
-    declarations: [
-        AppComponent,
-        NavMenuComponent,
-        HomeComponent
-    ],
+    declarations: [AppComponent, NavMenuComponent, HomeComponent],
     imports: [
         UniversalModule, // Must be first import. This automatically imports BrowserModule, HttpModule, and JsonpModule too.
         ExpenseModule, 
@@ -23,5 +19,4 @@ import { ExpenseModule } from './components/expense/expense.module';
         ])
     ]
 })
-export class AppModule {
-}
+export class AppModule {}

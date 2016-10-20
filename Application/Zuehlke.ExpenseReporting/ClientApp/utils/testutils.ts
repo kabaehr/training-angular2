@@ -3,8 +3,7 @@ import { NavigationExtras } from "@angular/router";
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 
 export class RouterStub {
-    navigateByUrl(url: string) { return url; }
-    navigate(url: string) { return url; }
+    navigate(url: string) : string { return url; }
 }
 
 @Injectable()

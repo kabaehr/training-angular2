@@ -5,6 +5,8 @@ import { Component } from '@angular/core';
     template: require('./home.component.html')
 })
 export class HomeComponent {
-    public zuehlkeLogo: string = require('../../assets/images/zuehlke_logo.jpg');
-    public pageTitle: string = 'Welcome to the Expenses Management Tool';
+
+    zuehlkeLogo: string = require('../../assets/images/zuehlke_logo.jpg');
+    pageTitle: string = 'Welcome to the Expenses Management Tool';
+
 }

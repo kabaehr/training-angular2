@@ -1,10 +1,9 @@
 ﻿import { ComponentFixture, TestBed, async, fakeAsync, tick } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
-import { FormsModule } from "@angular/forms";
-import { HttpModule } from "@angular/http";
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 
 import { By } from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 
 import { ExpenseOverviewComponent } from './expense-overview.component';
@@ -13,6 +12,7 @@ import { ExpenseService } from '../services/expense.service';
 import { Expense, Reason } from '../model/expense';
 
 describe('ExpenseOverviewComponent', () => {
+
     let expenseOverviewComponent: ExpenseOverviewComponent;
     let fixture: ComponentFixture<ExpenseOverviewComponent>;
 
@@ -75,6 +75,7 @@ describe('ExpenseOverviewComponent', () => {
         expect(tableBody.nativeElement.children.length).toEqual(1);
         expect(tableBody.nativeElement.children[0].children[0].textContent).toContain('Yoda');
     }));
+
 });
 
 

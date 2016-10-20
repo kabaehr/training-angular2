@@ -1,10 +1,9 @@
 ﻿import { ComponentFixture, TestBed, inject } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { Router } from '@angular/router';
-import { FormsModule } from "@angular/forms";
-import { HttpModule } from "@angular/http";
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 import { By } from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
 
 import { RouterStub } from '../../../../utils/testutils';
 
@@ -13,6 +12,7 @@ import { ExpenseFormComponent } from '../form/expense-form.component';
 import { ExpenseService } from '../services/expense.service';
 
 describe('ExpenseDetailComponent', () => {
+
     let expenseAddComponent: ExpenseAddComponent;
     let fixture: ComponentFixture<ExpenseAddComponent>;
     

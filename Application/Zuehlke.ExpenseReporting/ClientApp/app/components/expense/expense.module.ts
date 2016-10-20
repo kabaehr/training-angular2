@@ -12,9 +12,7 @@ import { ExpenseFormComponent } from './form/expense-form.component';
 
 @NgModule({
   imports: [
-      FormsModule,
-      CommonModule,
-    productRouting
+      FormsModule, CommonModule, productRouting
   ],
   declarations: [
     ExpenseOverviewComponent,

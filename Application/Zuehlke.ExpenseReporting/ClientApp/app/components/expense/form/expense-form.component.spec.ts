@@ -2,16 +2,17 @@
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { Router } from '@angular/router';
-import { RouterStub } from '../../../../utils/testutils';
-
 import { By } from '@angular/platform-browser';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
+
+import { RouterStub } from '../../../../utils/testutils';
 
 import { ExpenseFormComponent } from './expense-form.component';
 import { ExpenseService } from '../services/expense.service';
 import { Expense, Reason } from '../model/expense';
 
 describe('ExpenseFormComponent', () => {
+
     let expenseFormComponent: ExpenseFormComponent;
     let fixture: ComponentFixture<ExpenseFormComponent>;
 
@@ -24,8 +25,7 @@ describe('ExpenseFormComponent', () => {
         TestBed.configureTestingModule({
             imports: [FormsModule, HttpModule],
             declarations: [ExpenseFormComponent],
-            providers: [ExpenseService,
-                { provide: Router, useClass: RouterStub }]
+            providers: [ExpenseService, { provide: Router, useClass: RouterStub }]
         });
 
         fixture = TestBed.createComponent(ExpenseFormComponent);
