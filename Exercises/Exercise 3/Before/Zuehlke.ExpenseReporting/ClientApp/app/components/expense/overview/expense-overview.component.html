@@ -1,0 +1,42 @@
+<div class='panel panel-primary'>
+    <div class='panel-heading'>Expenses Overview</div>
+    <div class='panel-body'>
+        <div class='row'>
+            <div class='col-md-2'>Filter by:</div>
+            <div class='col-md-4'>
+                <input type='text' [(ngModel)]='expenseFilter' />
+            </div>
+        </div>
+        <div class='row' *ngIf='expenseFilter'>
+            <div class='col-md-6'>
+                <h3>Filtered by: {{ expenseFilter }} </h3>
+            </div>
+        </div>
+
+        <div class='has-error' *ngIf='errorMessage'>{{ errorMessage }}</div>
+
+        <div class='table-responsive'>
+            <table class='table' *ngIf='expenses && expenses.length'>
+                <thead>
+                    <tr>
+                        <th>From</th>
+                        <th>Date</th>
+                        <th>For what</th>
+                        <!--Exercise 3-->
+                        <!--TODO Add a new <th>-->
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor='let expense of expenses | expenseFilter:expenseFilter'>
+                        <td>{{ expense.name }}</td>
+                        <td>{{ expense.date | date:"dd/MM/yyyy" }}</td>
+                        <td>{{ expense.reason }}</td>
+                        <!--Exercise 3-->
+                        <!--TODO Add a new <td> with a click handler that deletes an expense-->
+                        <!-- Hint: <td> ... (click)="methodToImplement"</td> -->
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
