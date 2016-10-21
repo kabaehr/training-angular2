@@ -1,6 +1,6 @@
 ## Exercise 3 ##
 
-This exercise is about deleting an existing expense. We add the possibility to delete an exisiting expense in the overview. For that matter, we have to adapt the client (i.e. the HTML, the component and the service), as well as the backend (the Controller and the Repository).
+In this exercise, we add the possibility to delete an exisiting expense in the overview. For that matter, we have to adapt the client (i.e. the HTML, the component and the service) as well as the backend (the Controller and the Repository).
 
 
 ### Tasks ###
