@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { Subscription }       from 'rxjs/Subscription';
+import { Subscription } from 'rxjs/Subscription';
+import { Observable } from 'rxjs/Observable';
 
 import { Expense } from '../model/expense';
 import { ExpenseService } from '../services/expense.service';
@@ -11,7 +12,6 @@ import { ExpenseService } from '../services/expense.service';
 export class ExpenseDetailComponent implements OnInit, OnDestroy {
 
     expense: Expense;
-    errorMessage: string;
     private sub: Subscription;
 
     constructor(private route: ActivatedRoute, private router: Router, private expenseService: ExpenseService) {}
@@ -34,7 +34,12 @@ export class ExpenseDetailComponent implements OnInit, OnDestroy {
 
     private getExpense(id: string): void {
         this.expenseService.getExpense(id)
-            .subscribe(expense => this.expense = expense, error => this.errorMessage = error);
+            .subscribe(expense => this.expense = expense, error => { this.handleError(error) });
+    }
+
+    private handleError(error: any): Observable<any> {
+        console.error('Error with expense: ' + this.expense);
+        return Observable.throw(error);
     }
 
 }
