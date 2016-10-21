@@ -1,0 +1,35 @@
+<form class="form-horizontal" role="form" #expenseForm="ngForm">
+    <div class="form-group">
+        <label for="name" class="col-sm-2 control-label">Name</label>
+        <div class="col-sm-10">
+            <input [(ngModel)]="expense.name" name="name" type="text" class="form-control" id="name" #name="ngModel" required placeholder="Name">
+            <div [hidden]="name.valid || name.pristine" class="alert alert-danger">Description is required</div>
+        </div>
+    </div>
+    
+    <!-- Exercise 4 -->
+    
+    <!-- TODO Add a new div with the possibility to adapt the date -->
+    <!-- Hint: use the already provided div that shows the name (see above) for orientation. Use <input type="date" ...> -->
+
+    <!-- TODO Add a new div with the possibility to adapt the text -->
+    <!-- Hint: use the already provided div that shows the name (see above) for orientation. -->
+ 
+    <!-- TODO Add a new div with the possibility to adapt the price/amount -->
+    <!-- Hint: use the already provided div that shows the name (see above) for orientation. Use <input type="number" ...> -->
+
+    <div class="form-group">
+        <label for="reason" class="col-sm-2 control-label">Reason</label>
+        <div class="col-sm-10">
+            <select [(ngModel)]="expense.reason" class="form-control" id="reason" name="reason" required>
+                <option [selected]="expense.reason === 'Flight'" [value]="'Flight'">Flight</option>
+                
+                <!-- TODO add the other options for the reason -->
+
+            </select>
+        </div>
+    </div>
+    
+    <!-- TODO Add a button with a click handler that saves changes -->
+    <!-- Hint: (click)="save()" -->
+</form>
