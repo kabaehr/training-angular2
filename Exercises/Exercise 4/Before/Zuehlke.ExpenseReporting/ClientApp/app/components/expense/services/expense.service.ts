@@ -23,17 +23,14 @@ export class ExpenseService {
     }
     
     // Exercise 4
-
     // TODO: add method to get an expense with a specific id
     // Hint: use getExpenses() method and search for the expense with the wanted id - no changes in the backend are necessary for that
 
-
-    // TODO: finish the implementation for the updateExpense method
     updateExpense(expense: Expense): Observable<Response> {
         const dtoExpense = JSON.parse(JSON.stringify(expense));
         dtoExpense.date = this.convertDateToString(expense.date);
 
-        // make a http put request. Hint: you can use JSON.stringify(...) to get a JSON representation of the dtoExpense
+        // TODO: 
         return null;
     }
 

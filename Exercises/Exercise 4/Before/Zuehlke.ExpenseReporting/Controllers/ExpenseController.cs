@@ -68,7 +68,7 @@ namespace Zuehlke.ExpenseReporting.Controllers
         public IActionResult Put([FromBody]ExpenseRecord record)
         {
             // Exercise 4
-            // TODO update record in the repository
+            // TODO
 
            throw new NotImplementedException();
         }

@@ -7,7 +7,7 @@ import { ExpenseDetailComponent } from './detail/expense-detail.component';
 export const productRoutes: Routes = [
     { path: 'overview', component: ExpenseOverviewComponent }
     // Exercise 4
-    // TODO add a new path for the ExpenseDetailComponent. Use a variable id.
+    // TODO 
 ];
 
 export const productRouting: ModuleWithProviders = RouterModule.forChild(productRoutes);
