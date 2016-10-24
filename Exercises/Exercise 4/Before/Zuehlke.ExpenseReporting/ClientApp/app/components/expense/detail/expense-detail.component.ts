@@ -20,8 +20,7 @@ export class ExpenseDetailComponent implements OnInit, OnDestroy {
             params => {
                 const id = params['id'];
                 // Exercise 4
-                // TODO load and set the expense with the provided id from the route
-                // Hint: use the expense service to achieve that
+                // TODO 
             });
     }
 
