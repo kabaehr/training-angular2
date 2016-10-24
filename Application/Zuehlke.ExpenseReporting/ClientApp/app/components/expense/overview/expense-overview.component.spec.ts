@@ -43,7 +43,7 @@ describe('ExpenseOverviewComponent', () => {
         expect(expenseServiceSpy.calls.any()).toBe(false, 'getExpenses not yet called');
     });
 
-    it('should show two expenses after OnOnit', async(() => { //use async to handle getExpenses request
+    it('should show two expenses after OnInit', async(() => { //use async to handle getExpenses request
         fixture.detectChanges();
         fixture.whenStable().then(() => { // wait for async getExpenses
             fixture.detectChanges();        // update view with expsenses
