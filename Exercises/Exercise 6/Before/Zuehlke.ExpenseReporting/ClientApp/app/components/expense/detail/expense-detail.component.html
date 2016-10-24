@@ -1,0 +1,11 @@
+<div class="panel panel-primary" *ngIf="expense">
+    <div class="panel-heading" style="font-size: large">Expense from {{ expense.name }}</div>
+    <div class="panel-body">
+        <expense-form [expense]="expense"></expense-form>
+    </div>
+    <div class="panel-footer">
+        <a class="btn btn-default" (click)="goBack()">
+            <i class="glyphicon glyphicon-chevron-left"></i> Back to Overview
+        </a>
+    </div>
+</div>
