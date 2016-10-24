@@ -23,9 +23,7 @@ export class ExpenseService {
     }
 
     // Exercise 3
-    // TODO add a service method that deletes an expense
-    // Hint: use this.http.delete(url, headers) 
-
+    // TODO 
 
     private mapExpenses(response: Response) : any {
         const mappedExpenses = response.json() || [];

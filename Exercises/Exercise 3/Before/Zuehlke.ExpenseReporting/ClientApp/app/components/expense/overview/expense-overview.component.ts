@@ -22,6 +22,6 @@ export class ExpenseOverviewComponent implements OnInit {
     }
 
     // Exercise 3
-    // TODO add method to delete an expense
+    // TODO
    
 }

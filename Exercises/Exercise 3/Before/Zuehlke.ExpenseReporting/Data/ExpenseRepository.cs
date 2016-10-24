@@ -68,7 +68,7 @@ namespace Zuehlke.ExpenseReporting.Data
         public void Delete(Guid id)
         {
             // Exercise 3
-            // TODO delete entry from repository
+            // TODO
         }
 
         #endregion

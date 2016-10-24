@@ -45,7 +45,7 @@ namespace Zuehlke.ExpenseReporting.Controllers
         public IActionResult Delete(Guid id)
         {
             // Exercise 3
-            // TODO delete entry from repository in case it is there and send appropriate answers to the client
+            // TODO
 
             throw new NotImplementedException();
         }
