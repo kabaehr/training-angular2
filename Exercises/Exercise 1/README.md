@@ -1,6 +1,6 @@
 ## Exercise 1 ##
 
-This exercise is about setting up a simple Single-Page-Application using Angular 2, TypeScript and ASP.NET Core in Visual Studio 2015. You will also get a first glimpse to technologies used to manage and deploy dependencies in both the frontend web-application and the backend ASP.NET Core application.
+This exercise is about setting up a simple Single-Page-Application using Angular 2, TypeScript and ASP.NET Core in Visual Studio 2015. You will also get a first glimpse of the technologies used to manage and deploy dependencies in both the frontend web-application and the backend ASP.NET Core application.
 
 ### Prerequisites ###
 
@@ -22,4 +22,4 @@ Make sure you have installed the following software:
 
 ### Tasks ###
 
-Open Visual Studio an create a new **ASP.NET Core Angular 2 Starter Applicatuin (.NET Core)**. Wait for the solution creation to be finished, then press **[F5]** to start the application.
+Open Visual Studio an create a new **ASP.NET Core Angular 2 Starter Application (.NET Core)**. Wait for the solution creation to be finished, then press **[F5]** to start the application.
