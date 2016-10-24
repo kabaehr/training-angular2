@@ -33,7 +33,7 @@ export class ExpenseService {
         dtoExpense.date = this.convertDateToString(expense.date);
 
         //Exercise 5
-        // TODO send a post request with the dtoExpense
+        // TODO 
         return null;
     }
 

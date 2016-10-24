@@ -67,7 +67,7 @@ namespace Zuehlke.ExpenseReporting.Data
         public void Create(ExpenseRecord record)
         {
             // Exercise 5
-            // TODO add the record to the database
+            // TODO
         }
 
         /// <summary>

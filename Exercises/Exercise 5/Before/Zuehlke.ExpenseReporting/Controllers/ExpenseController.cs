@@ -68,7 +68,7 @@ namespace Zuehlke.ExpenseReporting.Controllers
         public IActionResult Post([FromBody]ExpenseRecord record)
         {
             // Exercise 5
-            // TODO Create a new expense in the repository
+            // TODO
 
             throw new NotImplementedException();
         }
