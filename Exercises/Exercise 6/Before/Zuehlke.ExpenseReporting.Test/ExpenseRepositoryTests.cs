@@ -128,7 +128,7 @@ namespace Zuehlke.ExpenseReporting.Test
         public void CanDeleteRecord()
         {
             // Exercise 6
-            // TODO write a unit test that tests that an expense record can be deleted
+            // TODO
         }
 
         /// <summary>

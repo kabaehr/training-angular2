@@ -43,7 +43,7 @@ describe('ExpenseOverviewComponent', () => {
         expect(expenseServiceSpy.calls.any()).toBe(false, 'getExpenses not yet called');
     });
 
-    it('should show two expenses after OnOnit', async(() => { //use async to handle getExpenses request
+    it('should show two expenses after OnInit', async(() => { //use async to handle getExpenses request
         fixture.detectChanges();
         fixture.whenStable().then(() => { // wait for async getExpenses
             fixture.detectChanges();        // update view with expsenses
@@ -57,11 +57,10 @@ describe('ExpenseOverviewComponent', () => {
         });
     }));
 
-    it('should remove one entry when it is deleted', fakeAsync(() => { //use fakeAsync to handle async request with a tick()
+    it('should remove one entry when it is deleted', fakeAsync(() => {
 
         // Exercise 6
-        // TODO Write a unit test that tests the deletion of an entry
-        // HINT: as orientation, the unit test 'should show two expenses after OnOnit can be used
+        // TODO 
 
     }));
 
