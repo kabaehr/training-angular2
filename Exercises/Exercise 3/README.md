@@ -21,6 +21,6 @@ In this exercise, we add the possibility to delete an exisiting expense in the o
 
 3. Add a method in `expense-services.ts` that performs the HTTP DELETE request - use `this.http.delete(url, headers)`
 
-4. Delete the entry from the repository in the method `Delete(Guid id)` in the `ExpenseController`. Furthermore, implemente the `Delete(Guid id)` method in the `ExpenseRepository` class.
+4. Delete the entry from the repository in the method `Delete(Guid id)` in the `ExpenseController`. For that matter, implement the `Delete(Guid id)` method in the `ExpenseRepository` class.
 
 
