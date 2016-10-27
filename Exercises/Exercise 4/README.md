@@ -19,9 +19,9 @@ In this exercise, we add the possibility to edit an exisiting expense. For that 
 
 ### Implementation Hints ###
 
-1. Extend the Routes in `expense.routing.ts`. Add a new Route for the `ExpenseDetailComponent`. Use a variable id. Furthermore, add a router link for each expense in `expense-overview.component.html`, such that a click on it loads the `ExpenseDetailComponent`.
+1. Extend the Routes in `expense.routing.ts`. Add a new Route for the `ExpenseDetailComponent`. Use a variable id. Furthermore, add a router link for each expense in `expense-overview.component.html`, such that a click on it loads the `ExpenseDetailComponent`. You can set the router link on the name of the expense for instance.
 
-2. Load and set the expense with the provided id from the route in the `ngOnInit()` method in `expense-detail.component.ts`. Use `expense.service.ts` to achieve that.
+2. Load and set the expense with the provided id from the route in the `ngOnInit()` method in `expense-detail.component.ts`. Use `expense.service.ts` to achieve that and maybe start implementing there.
 
 3. Use the selector from `expense-form.component.ts` to add the HTML of the form into the panel body of the `expense-detail.component.html`. Provide the correct expense as input for the form component.
 
