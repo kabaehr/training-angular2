@@ -39,10 +39,7 @@ namespace Zuehlke.ExpenseReporting.Data
         /// <returns>An <see cref="IEnumerable{T}"/> holding the expense records stored in the database.</returns>
         public IEnumerable<ExpenseRecord> All()
         {
-            lock (this.database)
-            {
-                return this.database;
-            }
+            throw new NotImplementedException();
         }
 
         public ExpenseRecord FindById(Guid id)

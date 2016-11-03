@@ -31,7 +31,7 @@ namespace Zuehlke.ExpenseReporting.Controllers
         [Produces(typeof(IEnumerable<ExpenseRecord>))]
         public IActionResult Get()
         {
-            return this.Ok(this.repository.All());
+            throw new NotImplementedException();
         }
 
        
