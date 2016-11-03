@@ -206,16 +206,31 @@ namespace Zuehlke.ExpenseReporting.Test
                 .Should()
                 .BeOfType<NoContentResult>();
 
-            // The Delete operation needs to be idempotent,
-            // so we need to test that again:
+            repositoryMock.Verify(mock => mock.Delete(testRecord.Id), Times.Exactly(1));
+        }
+
+        /// <summary>
+        /// Ensures that the controller returns a HTTP 204 if a resource has been
+        /// deleted successfully.
+        /// </summary>
+        [Fact]
+        public void CanNotDeleteMissingRecord()
+        {
+            var id = Guid.Parse("00000000-0000-0000-0000-000000000006");
+            var repositoryMock = new Mock<IExpenseRepository>();
+            repositoryMock.Setup(x => x.Delete(id)).Throws(new InvalidOperationException($"An expense record with ID {id} does not exist in the database!"));
+
+            var subject = new ExpenseController(repositoryMock.Object);
+
+            IActionResult result = null;
             subject
-                .Invoking(x => result = x.Delete(testRecord.Id))
+                .Invoking(x => result = x.Delete(id))
                 .ShouldNotThrow();
             result
                 .Should()
-                .BeOfType<NoContentResult>();
+                .BeOfType<NotFoundResult>();
 
-            repositoryMock.Verify(mock => mock.Delete(testRecord.Id), Times.Exactly(2));
+            repositoryMock.Verify(mock => mock.Delete(id), Times.Exactly(1));
         }
 
         /// <summary>
