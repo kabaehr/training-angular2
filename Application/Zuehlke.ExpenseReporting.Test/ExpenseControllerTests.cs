@@ -195,7 +195,7 @@ namespace Zuehlke.ExpenseReporting.Test
         {
             var testRecord = this.CreateTestData().First();
             var repositoryMock = new Mock<IExpenseRepository>();
-
+            repositoryMock.Setup(x => x.FindById(testRecord.Id)).Returns(testRecord);
             var subject = new ExpenseController(repositoryMock.Object);
 
             IActionResult result = null;
@@ -206,16 +206,28 @@ namespace Zuehlke.ExpenseReporting.Test
                 .Should()
                 .BeOfType<NoContentResult>();
 
-            // The Delete operation needs to be idempotent,
-            // so we need to test that again:
+            repositoryMock.Verify(mock => mock.Delete(testRecord.Id), Times.Exactly(1));
+        }
+
+        /// <summary>
+        /// Ensures that the controller returns a HTTP 404 result if the resource to be deleted is not available.
+        /// </summary>
+        public void CanNotDeleteRecord()
+        {
+            var testRecord = this.CreateTestData().First();
+            var repositoryMock = new Mock<IExpenseRepository>();
+            repositoryMock.Setup(x => x.FindById(testRecord.Id)).Returns((ExpenseRecord)null);
+            var subject = new ExpenseController(repositoryMock.Object);
+
+            IActionResult result = null;
             subject
-                .Invoking(x => result = x.Delete(testRecord.Id))
-                .ShouldNotThrow();
+                .Invoking(x => result = x.Delete(testRecord.Id));
+                
             result
                 .Should()
-                .BeOfType<NoContentResult>();
+                .BeOfType<NotFoundResult>();
 
-            repositoryMock.Verify(mock => mock.Delete(testRecord.Id), Times.Exactly(2));
+            repositoryMock.Verify(mock => mock.Delete(testRecord.Id), Times.Exactly(1));
         }
 
         /// <summary>
