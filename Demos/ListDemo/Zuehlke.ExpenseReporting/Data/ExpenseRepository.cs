@@ -57,15 +57,9 @@ namespace Zuehlke.ExpenseReporting.Data
             throw new NotImplementedException();
         }
 
-
-        /// <summary>
-        /// Removes the expense record with the specified id from the database.
-        /// </summary>
-        /// <param name="id">Unique id of the record to be deleted</param>
         public void Delete(Guid id)
         {
-            // Exercise 3
-            // TODO
+            throw new NotImplementedException();
         }
 
         #endregion
