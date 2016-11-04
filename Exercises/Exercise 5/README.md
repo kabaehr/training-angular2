@@ -1,6 +1,6 @@
 ## Exercise 5 ##
 
-In this exercise, we reuse the existing form and use it to add a new expense. For that, we also have to implement the add functionality in the backend.
+In this exercise, we reuse the existing form component and use it to add a new expense. For that, we also have to implement the add functionality in the backend.
 
 
 ### Tasks ###
