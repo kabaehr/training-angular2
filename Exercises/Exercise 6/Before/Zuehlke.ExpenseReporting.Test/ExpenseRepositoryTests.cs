@@ -127,8 +127,23 @@ namespace Zuehlke.ExpenseReporting.Test
         [Fact]
         public void CanDeleteRecord()
         {
-            // Exercise 6
             // TODO
+            // Exercise 6
+        }
+
+        /// <summary>
+        /// Ensures that the <see cref="ExpenseRepository.Delete"/> method throws an appropriate
+        /// exception should the user try to delete a record that does not exist in the database.
+        /// </summary>
+        [Fact]
+        public void ThrowsInvalidOperationExceptionWhenTryingToDeleteRecordThatDoesNotExist()
+        {
+            var id = Guid.Parse("00000000-0000-0000-0000-000000000006");
+            var subject = new ExpenseRepository();
+            subject
+                .Invoking(x => x.Delete(id))
+                .ShouldThrow<InvalidOperationException>()
+                .WithMessage($"An expense record with ID {id} does not exist in the database!");
         }
 
         /// <summary>
