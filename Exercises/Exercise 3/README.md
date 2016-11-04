@@ -5,9 +5,9 @@ In this exercise, we add the possibility to delete an exisiting expense in the o
 
 ### Tasks ###
 
-1. Extend the Overview HTML and add a delete button in every row
+1. Extend the Overview HTML and add a delete button in every row of the expenses table
 
-2. Add a method in the overview component that deletes an expense and is called when the user clicks the delete button in the browser.
+2. Add a method in the overview component that deletes an expense and is called when the user clicks the delete button to delete an expense.
 
 3. Extend the expense-service so it can send an HTTP DELETE request to the backend in order to effectively delete an expense.
 

@@ -25,7 +25,7 @@ In this exercise, we add the possibility to edit an exisiting expense. For that 
 
 3. Use the selector from `expense-form.component.ts` to add the HTML of the form into the panel body of the `expense-detail.component.html`. Provide the correct expense as input for the form component.
 
-4. Extend the `expense-form.component.html` so that all fields of an expense (except the id) can be updated. Furthermore, add a save button to save the changes made. Use two-way binding `[(ngModel)]` to ensure that changes in the input fields are also passed to the property. For orientation, use the `input` fields for the already provided fields of an exspense.
+4. Extend the `expense-form.component.html` so that all fields of an expense (except the id) can be updated. Furthermore, add a save button to save the changes made. Use two-way binding `[(ngModel)]` to ensure that changes in the input fields are also passed to the property. For orientation, use the `input` fields for the already provided fields of an expense.
 
 5. Add a save button in the `expense-form.component.html` to save the changes and register a click handler that persists changes. For that matter, implement the save method in the `expense-form.component.ts` and delegate the handling to the `expense.services.ts`. Perform a HTTP PUT request. You can use `JSON.stringify(...)` to get a JSON representation of the `expense` object.
 
