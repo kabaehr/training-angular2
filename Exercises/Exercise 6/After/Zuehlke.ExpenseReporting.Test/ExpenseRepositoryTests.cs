@@ -136,11 +136,21 @@ namespace Zuehlke.ExpenseReporting.Test
             subject
                 .FindById(id)
                 .Should().BeNull();
-            // Deletions need to be idempotent, so we need to
-            // check that again:
+        }
+
+        /// <summary>
+        /// Ensures that the <see cref="ExpenseRepository.Delete"/> method throws an appropriate
+        /// exception should the user try to delete a record that does not exist in the database.
+        /// </summary>
+        [Fact]
+        public void ThrowsInvalidOperationExceptionWhenTryingToDeleteRecordThatDoesNotExist()
+        {
+            var id = Guid.Parse("00000000-0000-0000-0000-000000000006");
+            var subject = new ExpenseRepository();
             subject
                 .Invoking(x => x.Delete(id))
-                .ShouldNotThrow();
+                .ShouldThrow<InvalidOperationException>()
+                .WithMessage($"An expense record with ID {id} does not exist in the database!");
         }
 
         /// <summary>

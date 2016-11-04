@@ -112,15 +112,17 @@ namespace Zuehlke.ExpenseReporting.Data
         /// Removes the expense record with the specified id from the database.
         /// </summary>
         /// <param name="id">Unique id of the record to be deleted</param>
+        /// <exception cref="InvalidOperationException">Thrown if the record to be deleted does not exist in the database.</exception>
         public void Delete(Guid id)
         {
             lock (this.database)
             {
-                var expenseRecord = this.FindById(id);
-                if (expenseRecord != null)
+                var record = this.FindById(id);
+                if (record == null)
                 {
-                    this.database.Remove(expenseRecord);
+                    throw new InvalidOperationException($"An expense record with ID {id} does not exist in the database!");
                 }
+                this.database.Remove(record);
             }
         }
 
