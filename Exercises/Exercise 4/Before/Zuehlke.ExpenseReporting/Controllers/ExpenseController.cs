@@ -42,8 +42,7 @@ namespace Zuehlke.ExpenseReporting.Controllers
         /// HTTP 200 with the requested <see cref="ExpenseRecord"/> entity in the body
         /// or HTTP 404 if the requested record was not found.
         /// </returns>
-        [HttpGet]
-        [Route("{id}")]
+        [HttpGet("{id}")]
         [Produces(typeof(ExpenseRecord))]
         public IActionResult GetById(Guid id)
         {
@@ -77,18 +76,22 @@ namespace Zuehlke.ExpenseReporting.Controllers
         /// Removes the expense record with the specified id from the database.
         /// </summary>
         /// <param name="id">Unique id of the record to be deleted</param>
-        /// <returns>HTTP 202 to indicate that the provided record is no longer available in the database.</returns>
+        /// <returns>
+        /// HTTP 202 to indicate that the provided record has been deleted 
+        /// and is no longer available in the database,
+        /// HTTP 404 if the requested record was not found.</returns>
         [HttpDelete("{id}")]
         public IActionResult Delete(Guid id)
         {
-            var expenseRecord = this.repository.FindById(id);
-            if (expenseRecord == null)
+            try
             {
-                return NotFound();
+                this.repository.Delete(id);
+                return this.NoContent();
             }
-            
-            this.repository.Delete(id);
-            return this.NoContent();
+            catch (InvalidOperationException)
+            {
+                return this.NotFound();
+            }
         }
     }
 }
