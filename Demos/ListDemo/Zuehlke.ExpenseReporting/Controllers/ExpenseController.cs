@@ -22,17 +22,5 @@ namespace Zuehlke.ExpenseReporting.Controllers
         {
             this.repository = expenseRepository;
         }
-
-        /// <summary>
-        /// Gets all expense records that are stored in the database.
-        /// </summary>
-        /// <returns>HTTP 200 with an array of <see cref="ExpenseRecord"/> entities in the body.</returns>
-        [HttpGet]
-        [Produces(typeof(IEnumerable<ExpenseRecord>))]
-        public IActionResult Get()
-        {
-            throw new NotImplementedException();
-        }
-
     }
 }
