@@ -18,8 +18,8 @@ Make sure you have installed the following software:
   :heavy_check_mark: To find out the version of Node.js that is installed on your computer open a command prompt and run `node -v`.
 
 * ASP.NET Core Template Pack
-  :information_source: You can find out more about  the template pack at [bit.ly/aspnetcoretp](http://bit.ly/aspnetcoretp)
+  :information_source: You can find out more about the template pack at [bit.ly/aspnetcoretp](http://bit.ly/aspnetcoretp)
 
 ### Tasks ###
 
-Open Visual Studio an create a new **ASP.NET Core Angular 2 Starter Application (.NET Core)**. Wait for the solution creation to be finished, then press **[F5]** to start the application.
+Open Visual Studio and create a new **ASP.NET Core Angular 2 Starter Application (.NET Core)**. Wait for the solution creation to be finished, then press **[F5]** to start the application.
