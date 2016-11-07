@@ -7,7 +7,7 @@ In this exercise, we are going to unit test the code of our application.
 
 1. Add a unit test that tests that an expense record can be deleted in the backend.
 
-2. Add a unit test that tests the deletion of an expense in expense-overview.component.spec.ts
+2. Add a unit test that tests the deletion of an expense in `expense-overview.component.spec.ts`
 
 
 ### Implementations Hints ###
